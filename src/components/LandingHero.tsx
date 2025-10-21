@@ -1,5 +1,4 @@
 import { Button } from "./ui/button";
-import Silk from "./Silk";
 import { motion } from "motion/react";
 
 interface LandingHeroProps {
@@ -9,16 +8,10 @@ interface LandingHeroProps {
 
 export default function LandingHero({ onSignupClick, onLoginClick }: LandingHeroProps) {
   return (
-    <div className="relative overflow-hidden">
-      {/* Animated Silk Background */}
-      <div className="absolute inset-0 z-0">
-        <Silk
-          speed={5}
-          scale={1}
-          color="#7B7481"
-          noiseIntensity={1.5}
-          rotation={0}
-        />
+    <div className="relative overflow-hidden bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900">
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-30">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
       </div>
 
       {/* Hero Content */}
