@@ -119,33 +119,33 @@ export default function CourseEditor({ onBack, onPreview, onPublish }: CourseEdi
   return (
     <div className="h-screen flex flex-col bg-gray-50">
       {/* Top Toolbar */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" onClick={onBack}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
+      <div className="bg-white border-b border-gray-200 px-2 sm:px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Button variant="ghost" size="sm" onClick={onBack} className="h-8 px-2 sm:px-3">
+            <ArrowLeft className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Back</span>
           </Button>
-          <img src={eduflowLogo} alt="Eduflow" className="h-6" />
+          <img src={eduflowLogo} alt="Eduflow" className="h-5 sm:h-6" />
         </div>
-        <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm" onClick={onPreview}>
-            <Eye className="w-4 h-4 mr-2" />
-            Preview
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Button variant="outline" size="sm" onClick={onPreview} className="h-8 px-2 sm:px-3">
+            <Eye className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Preview</span>
           </Button>
-          <Button 
-            size="sm" 
+          <Button
+            size="sm"
             onClick={onPublish}
-            className="bg-gray-900 hover:bg-gray-800 transition-all duration-300 hover:scale-105 text-white"
+            className="bg-gray-900 hover:bg-gray-800 transition-all duration-300 hover:scale-105 text-white h-8 px-2 sm:px-3"
           >
-            <Upload className="w-4 h-4 mr-2" />
-            Publish
+            <Upload className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Publish</span>
           </Button>
         </div>
       </div>
 
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar */}
-        <div className="w-64 bg-white border-r border-gray-200 overflow-y-auto">
+        <div className="hidden md:block w-64 bg-white border-r border-gray-200 overflow-y-auto">
           <div className="p-4">
             <h3 className="mb-4">Course Structure</h3>
             {sections.map((section) => (
@@ -184,7 +184,7 @@ export default function CourseEditor({ onBack, onPreview, onPublish }: CourseEdi
         </div>
 
         {/* Main Canvas */}
-        <div className="flex-1 overflow-y-auto p-8">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-6 md:p-8">
           <div className="max-w-3xl mx-auto">
             <Reorder.Group axis="y" values={blocks} onReorder={setBlocks}>
               {blocks.map((block) => (
@@ -209,52 +209,52 @@ export default function CourseEditor({ onBack, onPreview, onPublish }: CourseEdi
       </div>
 
       {/* Bottom Toolbar */}
-      <div className="bg-white border-t border-gray-200 px-8 py-4">
-        <div className="max-w-3xl mx-auto flex items-center justify-center gap-3">
+      <div className="bg-white border-t border-gray-200 px-2 sm:px-4 md:px-8 py-3 md:py-4 overflow-x-auto">
+        <div className="max-w-3xl mx-auto flex items-center justify-center gap-2 sm:gap-3 min-w-max">
           <Button
             variant="outline"
             size="sm"
             onClick={() => addBlock("text")}
-            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
+            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900 flex-shrink-0 h-9 px-3"
           >
-            <Type className="w-4 h-4 mr-2" />
-            Text
+            <Type className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Text</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => addBlock("image")}
-            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
+            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900 flex-shrink-0 h-9 px-3"
           >
-            <ImageIcon className="w-4 h-4 mr-2" />
-            Image
+            <ImageIcon className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Image</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => addBlock("video")}
-            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
+            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900 flex-shrink-0 h-9 px-3"
           >
-            <Video className="w-4 h-4 mr-2" />
-            Video
+            <Video className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Video</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => addBlock("quiz")}
-            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
+            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900 flex-shrink-0 h-9 px-3"
           >
-            <HelpCircle className="w-4 h-4 mr-2" />
-            Quiz
+            <HelpCircle className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Quiz</span>
           </Button>
           <Button
             variant="outline"
             size="sm"
             onClick={() => addBlock("divider")}
-            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
+            className="transition-all duration-300 hover:scale-105 hover:border-gray-900 hover:text-gray-900 flex-shrink-0 h-9 px-3"
           >
-            <Minus className="w-4 h-4 mr-2" />
-            Divider
+            <Minus className="w-4 h-4 sm:mr-2" />
+            <span className="hidden sm:inline">Divider</span>
           </Button>
         </div>
       </div>
